@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import { twMerge } from "tailwind-merge";
 import Box from "./Box";
 import SidebarItem from './SidebarItem'
 import Library from "./Library";
@@ -33,9 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     ], []);
 
     return (
-        <div 
-       
-        >
+        <div className={twMerge(`flex h-full`)}>
           <div 
             className="
               hidden 
@@ -65,9 +64,5 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
       );
     }
-
-export default Sidebar;
-
-function twMerge(arg0: string, arg1: any): string | undefined {
-    throw new Error("Function not implemented.");
-}
+     
+    export default Sidebar;
