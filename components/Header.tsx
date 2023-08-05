@@ -8,12 +8,12 @@ import { BiSearch } from "react-icons/bi";
 import Button from './Button'
 
 interface HeaderProps {
-    childern: React.ReactNode;
+    children: React.ReactNode;
     className?: string
 }
 
 const Header: React.FC<HeaderProps> = ({
-    childern,
+    children,
     className
 }) => {
     const router = useRouter ();
@@ -45,13 +45,21 @@ const Header: React.FC<HeaderProps> = ({
                 <div className='flex justify-between items-center gap-x-4'>
                     <>
                         <div>
-                            <Button>
+                            <Button onClick={() => {}}
+                                className='bg-transparent text-neutral-300 font-medium'>
                                 Sign up
+                            </Button>
+                        </div>
+                        <div>
+                            <Button onClick={() => {}}
+                                className='bg-white px-6 py-2'>
+                                Log in
                             </Button>
                         </div>
                     </>
                 </div>
             </div>
+            {children}
         </div>
     )
 }
