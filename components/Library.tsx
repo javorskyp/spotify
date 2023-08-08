@@ -2,12 +2,26 @@
 
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useUser } from "@/hooks/useUser";
+import useAuthModal from "@/hooks/useAuthModal";
+import useUploadModal from "@/hooks/useUploadModal";
+
 
 
 const Library: React.FC<LibraryProps> = ({
 }) => {
- 
-  const onClick = () => {}
+  
+  const authModal = useAuthModal();
+  const uploadModal = useUploadModal();
+
+  const { user } = useUser();
+
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+      return uploadModal.onOpen();
+  }
    
 
   return ( 
