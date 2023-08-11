@@ -1,7 +1,14 @@
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
-export default function Home() {
+export const revalidate = 0;
+
+//create actions that load our songs in our component
+
+export default async function Home() {
+  const songs = await (getSongs);
+
   return (
   <div className='bg-neutral-900 rounded-lg h-full overflow-hidden overflow-y-auto'>
     <Header>
@@ -20,7 +27,7 @@ export default function Home() {
         <h1 className="text-white text-2xl font-semibold">News songs title</h1>
       </div>
       <div>
-        List of songs
+        {songs.map((song) => <div>{song.title} </div>)}
       </div>
     </div>
   </div>
