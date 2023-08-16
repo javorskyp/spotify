@@ -12,15 +12,11 @@ import Library from "./Library";
 
 interface SidebarProps {
     children: React.ReactNode;
-    songs: Song[]
+    songs: Song[];
 };
 
-const Sidebar: React.FC<SidebarProps> = ({
-    children,
-    songs
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({ children, songs}: SidebarProps) => {
     const pathname = usePathname();
-
     const routes = useMemo(() => [
         {
             icon: HiHome,
