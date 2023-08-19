@@ -1,5 +1,6 @@
 ## Spotify
-This is full project showing how to build/clone Spotify page. Stack : Next, React, Typescript template, Tailwind, Stripe
+This is full project showing how to build/clone Spotify page. Stack : Next, React, Typescript template, Tailwind, Stripe.
+The structure of the project starts with the site and search page that allows you to search for selected songs.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
