@@ -99,8 +99,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                 </div>
             </div>
             <div className="flex md:hidden col-auto w-full justify-end items-center">
-                <div onClick={() => {}} className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer">
-                    <Icon/>
+                <div onClick={handlePlay} className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer">
+                    <Icon size={30} className="text-black" />
                 </div>
             </div>
             <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">

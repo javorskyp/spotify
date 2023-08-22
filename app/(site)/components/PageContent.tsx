@@ -23,9 +23,7 @@ const onPlay = useOnPlay(songs);
   }
 
   return ( 
-    <div 
-      className="
-        grid 
+    <div className="grid 
         grid-cols-2 
         sm:grid-cols-3 
         md:grid-cols-3 
@@ -39,7 +37,7 @@ const onPlay = useOnPlay(songs);
      {songs.map((item) => (
         <SongItem 
           key={item.id}
-          onClick={(id: string) => {onPlay: id}} 
+          onClick={(id: string) => onPlay(id)} 
           data={item}
         />
       ))}
