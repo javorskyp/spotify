@@ -9,6 +9,7 @@ import { Song } from "@/types"
 import Box from "./Box";
 import SidebarItem from './SidebarItem'
 import Library from "./Library";
+import usePlayer from "@/hooks/usePlayer";
 
 interface SidebarProps {
     children: React.ReactNode;
@@ -17,6 +18,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ children, songs}: SidebarProps) => {
     const pathname = usePathname();
+    const player = usePlayer();
     const routes = useMemo(() => [
         {
             icon: HiHome,
@@ -33,19 +35,8 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs}: SidebarProps) => {
     ], []);
 
     return (
-        <div className={twMerge(`flex h-full`)}>
-          <div 
-            className="
-              hidden 
-              md:flex 
-              flex-col 
-              gap-y-2 
-              bg-black 
-              h-full 
-              w-[300px] 
-              p-2
-            "
-          >
+        <div className={twMerge(`flex h-full`,  player.activeId && "h-[calc(100%-80px)]")}>
+          <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
             <Box>
               <div className="flex flex-col gap-y-4 px-5 py-4">
                 {routes.map((item) => (
