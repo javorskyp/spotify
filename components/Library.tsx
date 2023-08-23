@@ -42,9 +42,7 @@ const Library: React.FC<LibraryProps> = ({
             Your Library
           </p>
         </div>
-        <AiOutlinePlus 
-          onClick={onClick} 
-          size={20} 
+        <AiOutlinePlus onClick={onClick} size={20} 
           className="text-neutral-400 cursor-pointer hover:text-white transition"/>
       </div>
       <div className="flex flex-col gap-y-2 mt-4 px-3">
