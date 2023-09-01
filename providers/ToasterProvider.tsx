@@ -6,10 +6,7 @@ const ToasterProvider = () => {
   return ( 
     <Toaster 
       toastOptions={{
-        style: {
-          background: '#333',
-          color: '#fff',
-        }
+        style: { background: '#333', color: '#fff',}
       }}
     /> 
   );
